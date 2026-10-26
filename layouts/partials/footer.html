@@ -13,5 +13,27 @@
       <p><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></p>
     </div>
   </div>
-  <div class="wrap foot-base">© {{ now.Year }} RRLab, Sejong University</div>
+  <div class="wrap foot-base">
+    <span>© {{ now.Year }} RRLab, Sejong University</span>
+    {{ with site.Params.goatcounter }}<span id="visits" hidden>누적 방문 <strong></strong>회</span>{{ end }}
+  </div>
 </footer>
+{{ with site.Params.goatcounter }}
+<script>
+// Total visits from GoatCounter (+ count carried over from the old site). Stays hidden if the request fails.
+(function () {
+  var el = document.getElementById("visits");
+  if (!el || !window.fetch) return;
+  var offset = {{ site.Params.visits_offset | default 0 }};
+  fetch("https://{{ . }}.goatcounter.com/counter/TOTAL.json")
+    .then(function (r) { if (!r.ok) throw r.status; return r.json(); })
+    .then(function (d) {
+      var n = parseInt(String(d.count).replace(/[^0-9]/g, ""), 10) + offset;
+      if (isNaN(n)) return;
+      el.querySelector("strong").textContent = n.toLocaleString("ko-KR");
+      el.hidden = false;
+    })
+    .catch(function () {});
+})();
+</script>
+{{ end }}

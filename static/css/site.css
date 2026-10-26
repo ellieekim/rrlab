@@ -296,7 +296,8 @@ h2 { font-family: var(--f-display); font-weight: 720; font-stretch: 108%; font-s
 .site-foot { border-top: 1px solid var(--rule); background: var(--surface); padding-block: 36px 24px; font-size: 0.9rem; color: var(--muted); }
 .foot-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px 40px; }
 .foot-name { color: var(--ink); font-weight: 600; }
-.foot-base { margin-top: 28px; font-size: 0.8rem; }
+.foot-base { margin-top: 28px; font-size: 0.8rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 24px; }
+.foot-base strong { font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
 
 /* ---------- narrow ---------- */
 @media (max-width: 860px) {

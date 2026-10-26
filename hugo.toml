@@ -16,6 +16,12 @@ enableRobotsTXT = true
   address       = "05006 서울특별시 광진구 능동로 209 광개토관 1003A호 (교수연구실)"
   address_en    = "209 Neungdong-ro, Gwangjin-gu, Seoul 05006, Republic of Korea"
 
+  # 방문자 수 (GoatCounter)
+  # goatcounter: GoatCounter 가입 때 정한 코드 (예: "rrlab" → https://rrlab.goatcounter.com). 비워 두면 기능이 꺼집니다.
+  # visits_offset: 예전 사이트의 누적 방문자 수. 새 사이트 집계에 더해서 표시합니다.
+  goatcounter   = "rrlab"
+  visits_offset = 267
+
 [menu]
   [[menu.main]]
     name = "Research"
