@@ -12,6 +12,7 @@
       <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
       <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
       {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+      {{ partial "posters.html" (dict "page" . "class" "posters home-posters") }}
     </article>
     {{ else }}
     <p>아직 등록된 소식이 없습니다. content/news/ 폴더에 Markdown 파일을 추가하면 여기에 표시됩니다.</p>

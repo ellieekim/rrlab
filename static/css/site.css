@@ -286,9 +286,10 @@ h2 { font-family: var(--f-display); font-weight: 720; font-stretch: 108%; font-s
 .alumni dd { color: var(--muted); }
 
 /* posters (news) */
-.posters { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px; margin-top: 12px; }
-.posters a { display: block; }
-.posters img { width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--rule); background: var(--surface); }
+/* each link's flex-grow = its width/height ratio, so all posters in the row share one height */
+.posters { display: flex; gap: 16px; margin-top: 12px; align-items: flex-start; }
+.posters a { display: block; min-width: 0; }
+.posters img { display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--rule); background: var(--surface); }
 .posters a:hover img { border-color: var(--scope); }
 .home-posters { max-width: 560px; }
 

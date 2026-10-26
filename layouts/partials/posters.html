@@ -1,10 +1,21 @@
-{{/* 포스터 이미지 목록. ctx: dict "page" . "class" "posters" — static/ 에 있는 파일만 표시합니다. */}}
+{{/* 포스터 이미지 목록. ctx: dict "page" . "class" "posters"
+   static/ 에 있는 파일만 표시합니다. 각 포스터의 가로세로 비율만큼 폭을 나눠서
+   비율이 다른 포스터도 한 줄에서 높이가 똑같이 맞춰집니다. */}}
 {{ $imgs := slice }}
-{{ range .page.Params.posters }}{{ if fileExists (printf "static/%s" .) }}{{ $imgs = $imgs | append . }}{{ end }}{{ end }}
+{{ range .page.Params.posters }}
+  {{ $f := printf "static/%s" . }}
+  {{ if fileExists $f }}
+    {{ $c := imageConfig $f }}
+    {{ $imgs = $imgs | append (dict "src" . "w" $c.Width "h" $c.Height) }}
+  {{ end }}
+{{ end }}
 {{ with $imgs }}
 <div class="{{ $.class }}">
-  {{ range $i, $src := . }}
-  <a href="{{ $src | relURL }}" target="_blank" rel="noopener"><img src="{{ $src | relURL }}" alt="{{ $.page.Title }} 포스터 {{ add $i 1 }}" loading="lazy"></a>
+  {{ range $i, $p := . }}
+  {{ $ratio := div (float $p.w) $p.h }}
+  <a href="{{ $p.src | relURL }}" target="_blank" rel="noopener" style="flex: {{ $ratio }} 1 0">
+    <img src="{{ $p.src | relURL }}" width="{{ $p.w }}" height="{{ $p.h }}" alt="{{ $.page.Title }} 포스터 {{ add $i 1 }}" loading="lazy">
+  </a>
   {{ end }}
 </div>
 {{ end }}
