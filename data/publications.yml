@@ -130,6 +130,18 @@ journal_domestic:
     year: 2014
 
 conference:
+  - title: "탄도 궤적 이미지화 기반 대포병 레이다의 CNN 표적분류 기법"
+    venue: "한국전자파학회 하계종합학술대회"
+    year: 2026
+    month: 8
+  - title: "FSK 파형 기반의 드론 추적 및 식별에 관한 연구"
+    venue: "한국전자파학회 하계종합학술대회"
+    year: 2026
+    month: 8
+  - title: "FSK를 활용한 CW레이더의 위상기반 거리추정기법에 대한 연구"
+    venue: "한국전자파학회 동계종합학술대회"
+    year: 2026
+    month: 8
   - title: "2단계 MPM을 적용한 FMCW 레이다의 고해상도 각도 추정에 대한 연구"
     venue: "한국전자파학회 하계종합학술대회"
     year: 2025
