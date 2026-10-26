@@ -50,11 +50,11 @@
         <div class="portrait sm initials" aria-hidden="true">{{ substr .name 0 1 }}</div>
       {{ end }}
       <div>
-        <h3>{{ .name }} <span lang="en">{{ .name_en }}</span></h3>
-        <p class="role">{{ .degree }}, {{ .since }}–</p>
-        <p class="small">{{ .background }}</p>
-        <p class="small"><a href="mailto:{{ .email }}">{{ .email }}</a></p>
-        <ul class="tags" aria-label="관심분야">{{ range .interests }}<li>{{ . }}</li>{{ end }}</ul>
+        <h3>{{ .name }}{{ with .name_en }} <span lang="en">{{ . }}</span>{{ end }}</h3>
+        <p class="role">{{ .degree }}{{ with .since }}, {{ . }}–{{ end }}</p>
+        {{ with .background }}<p class="small">{{ . }}</p>{{ end }}
+        {{ with .email }}<p class="small"><a href="mailto:{{ . }}">{{ . }}</a></p>{{ end }}
+        {{ with .interests }}<ul class="tags" aria-label="관심분야">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
       </div>
     </article>
     {{ end }}
