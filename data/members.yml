@@ -42,14 +42,6 @@ professor:
       period: "2009"
 
 students:
-  - name: "조우형"
-    name_en: "Woo Hyung Cho"
-    degree: "석사과정"
-    since: 2024
-    background: "세종대학교 항공우주공학과 졸업 (2022.02)"
-    email: "jowoo423@sju.ac.kr"
-    interests: ["Signal Processing", "Drone Tracking", "Target Classification"]
-    photo: "images/members/woohyung-cho.jpg"
   - name: "박우영"
     name_en: "Wooyoung Park"
     degree: "석사과정"
@@ -58,6 +50,22 @@ students:
     email: "wooyoung.park.rokn@sju.ac.kr"
     interests: ["Radar Systems", "Signal Processing", "Target Classification"]
     photo: "images/members/wooyoung-park.jpg"
+  - name: "박융"
+    name_en: ""
+    degree: "석사과정"
+    since: 2026
+    background: ""
+    email: ""
+    interests: ["Signal Processing", "Drone Tracking"]
+    photo: ""
+  - name: "구윤성"
+    name_en: ""
+    degree: "석사과정"
+    since: 2026
+    background: ""
+    email: ""
+    interests: ["Signal Processing", "Drone Tracking"]
+    photo: ""
 
 alumni:
   - name: "조근"
@@ -69,4 +77,6 @@ alumni:
   - name: "김승련"
     affiliation: "LIG넥스원"
   - name: "윤덕근"
+    affiliation: "LIG넥스원"
+  - name: "조우형"
     affiliation: "LIG넥스원"
