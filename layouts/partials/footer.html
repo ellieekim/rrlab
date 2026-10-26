@@ -1,0 +1,17 @@
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-name">{{ site.Params.fullname }}</p>
+      <p>{{ site.Params.university_en }} {{ site.Params.university }}</p>
+    </div>
+    <div>
+      <p>{{ site.Params.address }}</p>
+      <p lang="en">{{ site.Params.address_en }}</p>
+    </div>
+    <div>
+      <p>{{ site.Params.pi }} 교수</p>
+      <p><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></p>
+    </div>
+  </div>
+  <div class="wrap foot-base">© {{ now.Year }} RRLab, Sejong University</div>
+</footer>

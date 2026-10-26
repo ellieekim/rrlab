@@ -1,0 +1,58 @@
+{{ define "main" }}
+{{ $pubs := site.Data.publications }}
+{{ $all := slice }}
+{{ range $pubs.journal_intl }}{{ $all = $all | append . }}{{ end }}
+{{ range $pubs.journal_domestic }}{{ $all = $all | append . }}{{ end }}
+{{ range $pubs.conference }}{{ $all = $all | append . }}{{ end }}
+{{ $nowym := now.Format "2006.01" }}
+
+<header class="page-head">
+  <div class="wrap">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.intro }}<p class="intro">{{ . }}</p>{{ end }}
+  </div>
+</header>
+
+<section class="wrap areas" aria-label="연구 분야">
+  {{ range site.Data.research }}
+  {{ $key := .key }}
+  <article class="area" id="{{ .key }}">
+    {{ partial "figure.html" (dict "src" .image "alt" .title "class" "area-fig") }}
+    <div class="area-text">
+      <h2 lang="en">{{ .title }}</h2>
+      <p class="ko-title">{{ .title_ko }}</p>
+      <p>{{ .summary }}</p>
+      {{ $related := slice }}
+      {{ range $all }}{{ if in (.tags | default slice) $key }}{{ $related = $related | append . }}{{ end }}{{ end }}
+      {{ with $related }}
+      <details class="related">
+        <summary>관련 논문 {{ len . }}편</summary>
+        <ul>
+          {{ range sort . "year" "desc" }}
+          <li>{{ .title }} <span class="meta">{{ .venue }}, {{ .year }}</span></li>
+          {{ end }}
+        </ul>
+      </details>
+      {{ end }}
+    </div>
+  </article>
+  {{ end }}
+</section>
+
+<section class="wrap projects" aria-labelledby="projects-h">
+  <div class="section-head">
+    <h2 id="projects-h">Projects</h2>
+    <p class="sub">연구과제 {{ len site.Data.projects }}건</p>
+  </div>
+  <ol class="project-list">
+    {{ range sort site.Data.projects "start" "desc" }}
+    {{ $ongoing := ge .end $nowym }}
+    <li class="project{{ if $ongoing }} is-ongoing{{ end }}">
+      <span class="period">{{ .start }} – {{ .end }}</span>
+      <span class="ptitle">{{ .title }}{{ if $ongoing }} <span class="chip">진행 중</span>{{ end }}</span>
+      <span class="sponsor">{{ .sponsor }}</span>
+    </li>
+    {{ end }}
+  </ol>
+</section>
+{{ end }}

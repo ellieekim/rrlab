@@ -1,0 +1,21 @@
+{{ define "main" }}
+<header class="page-head">
+  <div class="wrap">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.intro }}<p class="intro">{{ . }}</p>{{ end }}
+  </div>
+</header>
+<section class="wrap">
+  <div class="news-list wide">
+    {{ range .Pages.ByDate.Reverse }}
+    <article class="news-item{{ if .Params.featured }} is-featured{{ end }}">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+    </article>
+    {{ else }}
+    <p>아직 등록된 소식이 없습니다. content/news/ 폴더에 Markdown 파일을 추가하면 여기에 표시됩니다.</p>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

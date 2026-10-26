@@ -1,0 +1,73 @@
+{{ define "main" }}
+{{ $m := site.Data.members }}
+{{ $p := $m.professor }}
+<header class="page-head">
+  <div class="wrap">
+    <h1>{{ .Title }}</h1>
+  </div>
+</header>
+
+<section class="wrap prof" aria-labelledby="prof-h">
+  <div class="prof-id">
+    {{ if and $p.photo (fileExists (printf "static/%s" $p.photo)) }}
+      <img class="portrait" src="{{ $p.photo | relURL }}" alt="{{ $p.name }} 교수 사진">
+    {{ else }}
+      <div class="portrait initials" aria-hidden="true">{{ substr $p.name 0 1 }}</div>
+    {{ end }}
+    <div>
+      <p class="role">{{ $p.title }}</p>
+      <h2 id="prof-h">{{ $p.name }} <span lang="en">{{ $p.name_en }}</span></h2>
+      <p><a href="mailto:{{ $p.email }}">{{ $p.email }}</a></p>
+    </div>
+  </div>
+  <div class="cv">
+    <div class="cv-block">
+      <h3>Education</h3>
+      <ul>{{ range $p.education }}<li>{{ .ko }}{{ with .en }}<span class="en" lang="en">{{ . }}</span>{{ end }}</li>{{ end }}</ul>
+    </div>
+    <div class="cv-block">
+      <h3>Work Experience</h3>
+      <ul class="dated">{{ range $p.experience }}<li><span class="when">{{ .period }}</span><span>{{ .ko }}{{ with .en }}<span class="en" lang="en">{{ . }}</span>{{ end }}</span></li>{{ end }}</ul>
+    </div>
+    <div class="cv-block">
+      <h3>Professional Activities</h3>
+      <ul class="dated">{{ range $p.activities }}<li><span class="when">{{ .period }}</span><span>{{ .text }}</span></li>{{ end }}</ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap people" aria-labelledby="students-h">
+  <div class="section-head">
+    <h2 id="students-h">Students</h2>
+    <p class="sub">재학생</p>
+  </div>
+  <div class="student-grid">
+    {{ range $m.students }}
+    <article class="student">
+      {{ if and .photo (fileExists (printf "static/%s" .photo)) }}
+        <img class="portrait sm" src="{{ .photo | relURL }}" alt="{{ .name }} 사진">
+      {{ else }}
+        <div class="portrait sm initials" aria-hidden="true">{{ substr .name 0 1 }}</div>
+      {{ end }}
+      <div>
+        <h3>{{ .name }} <span lang="en">{{ .name_en }}</span></h3>
+        <p class="role">{{ .degree }}, {{ .since }}–</p>
+        <p class="small">{{ .background }}</p>
+        <p class="small"><a href="mailto:{{ .email }}">{{ .email }}</a></p>
+        <ul class="tags" aria-label="관심분야">{{ range .interests }}<li>{{ . }}</li>{{ end }}</ul>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</section>
+
+<section class="wrap people" aria-labelledby="alumni-h">
+  <div class="section-head">
+    <h2 id="alumni-h">Alumni</h2>
+    <p class="sub">졸업생</p>
+  </div>
+  <dl class="alumni">
+    {{ range $m.alumni }}<div><dt>{{ .name }}</dt><dd>{{ .affiliation }}</dd></div>{{ end }}
+  </dl>
+</section>
+{{ end }}

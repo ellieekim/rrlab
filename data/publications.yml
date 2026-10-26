@@ -1,0 +1,234 @@
+# 논문·특허 목록
+# - 새 항목은 해당 목록 맨 위에 추가하면 됩니다. 페이지에서는 연도순으로 자동 정렬됩니다.
+# - tags: research.yml의 key(drone, mimo, noise, ssa)를 넣으면 Research 페이지의 "관련 논문"에 표시됩니다.
+# - link: DOI나 논문 URL이 있으면 넣으세요 (선택).
+
+journal_intl:
+  - title: "Super-Resolution Processing for Multiple Aperture Antenna to Suppress Multipath"
+    venue: "Mathematics"
+    volume: "12"
+    year: 2024
+  - title: "Linear Frequency Modulation and Orthogonal Code Modulation for Co-Located Multiple-Input Multiple-Output High-Frequency Surface Wave Radar"
+    venue: "Remote Sensing"
+    volume: "16"
+    year: 2024
+    tags: [mimo]
+  - title: "Design of a Variable Reference Current Controller for Micro-stepping Motor Based on Vibration and Missing Step Characteristic Data"
+    venue: "International Journal of Precision Engineering and Manufacturing"
+    volume: "24"
+    year: 2023
+  - title: "Track-Before-Resolving: Doppler Ambiguity Resolution at Low SNR"
+    venue: "IET Radar, Sonar & Navigation"
+    year: 2023
+  - title: "Non-Uniform MIMO Array Design for Radar Systems Using Multi-Channel Transceivers"
+    venue: "Remote Sensing"
+    volume: "15"
+    year: 2023
+    tags: [mimo]
+  - title: "A Wideband Noise Radar System Using a Phased Array with True Time Delay"
+    venue: "Remote Sensing"
+    volume: "14"
+    year: 2022
+    tags: [noise]
+  - title: "MIMO FMCW Radar with Doppler-Insensitive Polyphase Codes"
+    venue: "Remote Sensing"
+    volume: "14"
+    year: 2022
+    tags: [mimo]
+  - title: "Range Dividing MIMO Waveform for Improving Tracking Performance"
+    venue: "Sensors"
+    volume: "21"
+    year: 2021
+    tags: [mimo]
+  - title: "MVDR Code Receiver for Code Multiplexing MIMO Radar"
+    venue: "Electronics Letters"
+    volume: "55"
+    year: 2019
+    tags: [mimo]
+  - title: "Random Phase Code for Automotive MIMO Radars Using Combined Frequency Shift Keying-Linear FMCW Waveform"
+    venue: "IET Radar, Sonar & Navigation"
+    volume: "12"
+    year: 2018
+    tags: [mimo]
+  - title: "Efficient Implementation of the ML Estimator for High-Resolution Angle Estimation in an Unmanned Ground Vehicle"
+    venue: "IET Radar, Sonar & Navigation"
+    volume: "12"
+    year: 2018
+  - title: "Numerical Implementation of Generalized Monopulse Estimation with Measured Subarray Patterns"
+    venue: "IEICE Transactions on Electronics"
+    volume: "E98-C"
+    year: 2015
+
+journal_domestic:
+  - title: "모델기반 통합 개발 플랫폼을 이용한 레이다 소프트웨어의 자동 코드 구현과 하드웨어 장입에 관한 연구"
+    venue: "한국시뮬레이션학회 논문지"
+    volume: "34"
+    year: 2025
+  - title: "모델기반 통합 개발 플랫폼을 이용한 다기능 레이다 소프트웨어 개발의 타당성 연구"
+    venue: "한국시뮬레이션학회 논문지"
+    volume: "32"
+    year: 2023
+  - title: "심층 합성곱 신경망을 이용한 레이더 신호 탐지 성능 분석"
+    venue: "방송공학회 논문지"
+    volume: "28"
+    year: 2023
+  - title: "단일 플랫폼에서 동시 운용되는 펄스 도플러 레이다의 파형 및 변조 방식간의 간섭 분석"
+    venue: "한국군사과학기술학회지"
+    volume: "25"
+    year: 2022
+  - title: "다중 위상 코드의 설계 및 부엽과 도플러 성능"
+    venue: "한국전자파학회 논문지"
+    volume: "32"
+    year: 2021
+  - title: "시뮬레이티드 어닐링을 이용한 다중 위상 코드 설계"
+    venue: "한국전자파학회 논문지"
+    volume: "31"
+    year: 2020
+  - title: "시스템 구현 용이성을 위한 위상변조코드의 위상 양자화 효과 분석"
+    venue: "한국전자파학회 논문지"
+    volume: "31"
+    year: 2020
+  - title: "FMICW와 버니어식 과정을 통한 정밀 빙붕 깊이 측정 레이다에 관한 연구"
+    venue: "한국전자파학회 논문지"
+    volume: "30"
+    year: 2019
+  - title: "Dwell Time Optimization of Alert-Confirm Detection for Active Phased Array Radars"
+    venue: "Journal of Electromagnetic Engineering and Science"
+    volume: "19"
+    year: 2019
+  - title: "탐색 레이다에서 누적확률에 기인한 탐지거리 계산에 관한 연구"
+    venue: "한국전자파학회 논문지"
+    volume: "29"
+    year: 2018
+  - title: "MPRF(Medium Pulse Repetition Frequency) 모드의 추적 PRF 선택"
+    venue: "한국전자파학회 논문지"
+    volume: "28"
+    year: 2017
+  - title: "FJB 파형을 이용한 SAR 영상 생성 기법 분석"
+    venue: "한국전자파학회 논문지"
+    volume: "28"
+    year: 2017
+  - title: "다중 레이다 시스템의 고속표적 인계 시점 결정기법 연구"
+    venue: "한국전자파학회 논문지"
+    volume: "27"
+    year: 2016
+  - title: "능동위상배열 레이더 적용을 위한 FPGA 기반 실시간 적응 빔 형성기 설계 및 구현"
+    venue: "한국전자파학회 논문지"
+    volume: "26"
+    year: 2015
+  - title: "광대역 레이더의 표적 반사 신호 모의 방법에 관한 연구"
+    venue: "한국전자파학회 논문지"
+    volume: "26"
+    year: 2015
+  - title: "Implementation of High-Resolution Angle Estimator for an Unmanned Ground Vehicle"
+    venue: "Journal of Electromagnetic Engineering and Science"
+    volume: "15"
+    year: 2015
+  - title: "MPRF 파형을 사용하는 항공기 레이더에서 탐색/추적을 위한 실시간 PRF 선택"
+    venue: "한국전자파학회 논문지"
+    volume: "25"
+    year: 2014
+
+conference:
+  - title: "2단계 MPM을 적용한 FMCW 레이다의 고해상도 각도 추정에 대한 연구"
+    venue: "한국전자파학회 하계종합학술대회"
+    year: 2025
+    month: 8
+  - title: "HFSWR에 적용하는 Time-staggered MIMO FMICW 파형에 관한 연구"
+    venue: "한국전자파학회 하계종합학술대회"
+    year: 2025
+    month: 8
+    tags: [mimo]
+  - title: "레이더 센서와 총 최소 자승법을 이용한 골프 공 스핀 추정에 관한 연구"
+    venue: "한국전자파학회 하계종합학술대회"
+    year: 2023
+    month: 8
+  - title: "바이스태틱과 모노스태틱 방식의 초수평선 레이다 탐지 커버리지에 관한 연구"
+    venue: "한국전자파학회 하계종합학술대회"
+    year: 2023
+    month: 8
+  - title: "인접한 레이다의 동일 주파수 대역내에서 동시운용을 위한 상호간섭이 억제된 직교파형 연구"
+    venue: "한국전자파학회 하계종합학술대회"
+    year: 2022
+    month: 8
+  - title: "신경망을 이용한 레이더 식별 성능 비교"
+    venue: "한국전자파학회 하계종합학술대회"
+    year: 2021
+    month: 8
+  - title: "상호간섭을 줄이기 위한 OFDM 파형과 동일 대역폭을 가지는 LFM 파형의 성능 비교"
+    venue: "한국전자파학회 하계종합학술대회"
+    year: 2020
+    month: 8
+  - title: "위상검출 FMCW 레이다 신호처리 및 클록 불안정성이 성능에 미치는 영향에 관한 연구"
+    venue: "한국전자파학회 하계종합학술대회"
+    year: 2018
+    month: 8
+  - title: "FMCW 방식의 레이더의 정확도 향상을 위한 위상 처리 및 구현"
+    venue: "한국해군과학기술학회 하계학술대회"
+    year: 2018
+    month: 6
+  - title: "탐색 레이더에서 누적확률에 기인한 탐지거리 계산에 관한 연구"
+    venue: "한국전자파학회 하계종합학술대회"
+    year: 2017
+    month: 8
+  - title: "우주물체감시레이더의 체계 설계와 성능 분석을 위한 시뮬레이터 소프트웨어 설계"
+    venue: "한국전자파학회 하계종합학술대회"
+    year: 2017
+    month: 8
+    tags: [ssa]
+  - title: "오차 공분산을 이용한 추적 파형 선정"
+    venue: "한국통신학회 하계종합학술대회"
+    year: 2017
+    month: 6
+  - title: "인공우주물체 관측을 위한 우주물체감시레이더의 설계분석 툴 개발"
+    venue: "한국전자파학회 하계종합학술대회"
+    year: 2016
+    month: 6
+    tags: [ssa]
+  - title: "Development of AESA Radar Simulator for Space Observation Using GEDAE"
+    venue: "SpaceOps 2016, 14th International Conference on Space Operations (AIAA)"
+    year: 2016
+    month: 5
+    tags: [ssa]
+  - title: "압축센싱기법 기반 SPICE 알고리즘 분해능의 성능"
+    venue: "한국전자파학회 하계학술대회"
+    year: 2015
+    month: 8
+  - title: "압축센싱기법 기반 SpSF 알고리즘 비용함수 파라미터"
+    venue: "한국전자파학회 하계학술대회"
+    year: 2015
+    month: 8
+  - title: "AESA 레이더 기술 및 개발 동향"
+    venue: "한국전자파학회 하계학술대회"
+    year: 2015
+    month: 8
+  - title: "고속 표적 대응을 위한 다기능 레이더의 탐색 및 표적 인수 최적화 기법 연구"
+    venue: "한국항공우주학회 춘계학술대회"
+    year: 2015
+    month: 4
+  - title: "비정형화된 문서간 추적성 분석 및 그 가시화 방안 제시"
+    venue: "한국CAD/CAM학회 동계학술대회"
+    year: 2015
+    month: 2
+
+patent:
+  - title: "Ku 대역 슬롯 어레이 안테나 대역폭 확장"
+    status: "출원"
+    year: 2025
+    month: 12
+  - title: "차량용 위장망 기구"
+    status: "등록"
+    year: 2019
+    month: 6
+  - title: "차량용 위장망 기구"
+    status: "출원"
+    year: 2017
+    month: 12
+  - title: "RF 레이더를 이용한 위치 탐색 시스템 및 그 방법"
+    status: "등록"
+    year: 2016
+    month: 5
+  - title: "RF 레이더를 이용한 위치 탐색 시스템 및 그 방법"
+    status: "출원"
+    year: 2014
+    month: 12

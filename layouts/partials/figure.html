@@ -1,0 +1,9 @@
+{{/* 이미지가 static/ 에 있으면 표시하고, 없으면 레이다 거리 링 모양의 자리표시를 그립니다. ctx: dict "src" "alt" "class" */}}
+{{ $src := .src }}
+{{ if and $src (fileExists (printf "static/%s" $src)) }}
+  <img class="{{ .class }}" src="{{ $src | relURL }}" alt="{{ .alt }}" loading="lazy">
+{{ else }}
+  <div class="{{ .class }} placeholder" role="img" aria-label="{{ .alt }} (그림 준비 중)">
+    <span>그림 준비 중</span>
+  </div>
+{{ end }}

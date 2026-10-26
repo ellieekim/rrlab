@@ -1,0 +1,16 @@
+{{ $cur := . }}
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="{{ "/" | relURL }}" aria-label="RRLab 홈">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">RRLab</span>
+    </a>
+    <nav aria-label="주 메뉴">
+      <ul>
+        {{ range site.Menus.main }}
+        <li><a href="{{ .URL }}"{{ if or ($cur.IsMenuCurrent "main" .) ($cur.HasMenuCurrent "main" .) }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</header>

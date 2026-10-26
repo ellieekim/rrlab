@@ -1,0 +1,38 @@
+baseURL = "https://rrlab.example.com/"   # 실제 주소로 바꾸세요 (예: https://<github-id>.github.io/rrlab/)
+languageCode = "ko"
+defaultContentLanguage = "ko"
+title = "RRLab"
+disableKinds = ["taxonomy", "term", "RSS"]
+enableRobotsTXT = true
+
+[params]
+  fullname      = "Radar Research Laboratory"
+  tagline       = "Advanced signal processing and innovation"
+  university    = "세종대학교"
+  university_en = "Sejong University"
+  description   = "세종대학교 레이다 연구실(RRLab): 드론 탐지·식별, MIMO 레이다, 광대역 잡음 레이다, 우주물체 감시 레이다의 신호처리 연구"
+  pi            = "김은희"
+  email         = "eunheekim@sejong.ac.kr"
+  address       = "05006 서울특별시 광진구 능동로 209 광개토관 1003A호 (교수연구실)"
+  address_en    = "209 Neungdong-ro, Gwangjin-gu, Seoul 05006, Republic of Korea"
+
+[menu]
+  [[menu.main]]
+    name = "Research"
+    pageRef = "/research"
+    weight = 10
+  [[menu.main]]
+    name = "Publications"
+    pageRef = "/publications"
+    weight = 20
+  [[menu.main]]
+    name = "Members"
+    pageRef = "/members"
+    weight = 30
+  [[menu.main]]
+    name = "News"
+    pageRef = "/news"
+    weight = 40
+
+[markup.goldmark.renderer]
+  unsafe = true

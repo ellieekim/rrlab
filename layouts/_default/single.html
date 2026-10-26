@@ -1,0 +1,15 @@
+{{ define "main" }}
+<article class="post">
+  <header class="page-head">
+    <div class="wrap">
+      <p class="crumb"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></p>
+      <h1 class="post-title">{{ .Title }}</h1>
+      {{ with .Params.title_en }}<p class="intro" lang="en">{{ . }}</p>{{ end }}
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+    </div>
+  </header>
+  <div class="wrap prose">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

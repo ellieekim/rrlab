@@ -1,0 +1,67 @@
+{{ define "main" }}
+{{ $news := (site.GetPage "/news").Pages.ByDate.Reverse }}
+{{ $featured := where $news "Params.featured" true }}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="affil">{{ site.Params.university_en }} <span>{{ site.Params.university }}</span></p>
+      <h1>Radar Research Laboratory</h1>
+      <p class="tagline">{{ site.Params.tagline }}</p>
+      <p class="lede">{{ .Params.lede }}</p>
+      <div class="actions">
+        <a class="btn" href="{{ (site.GetPage "/research").RelPermalink }}">연구 분야 보기</a>
+        {{ with index $featured 0 }}<a class="btn quiet" href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
+      </div>
+    </div>
+    <figure class="scope">
+      <canvas id="ppi" width="440" height="440" aria-label="레이다 PPI 화면: 회전하는 빔이 표적 에코를 비추는 장면" role="img"></canvas>
+      <figcaption>PPI 화면, 거리 링 5 km 간격</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap two-col">
+    <div>
+      <h2>Research Topics</h2>
+      <p class="sub">{{ .Params.topics_heading }}</p>
+    </div>
+    <ul class="topic-list">
+      {{ range .Params.topics }}
+      <li><span lang="en">{{ .en }}</span><span class="ko">{{ .ko }}</span></li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap two-col">
+    <div>
+      <h2>News</h2>
+      <p class="sub"><a href="{{ (site.GetPage "/news").RelPermalink }}">전체 소식 보기</a></p>
+    </div>
+    <div class="news-list">
+      {{ range first 3 $news }}
+      <article class="news-item{{ if .Params.featured }} is-featured{{ end }}">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap two-col">
+    <div>
+      <h2>Contact</h2>
+    </div>
+    <dl class="contact">
+      <div><dt>연구책임자</dt><dd>{{ site.Params.pi }} 교수 <a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></dd></div>
+      <div><dt>위치</dt><dd>{{ site.Params.address }}<br><span lang="en">{{ site.Params.address_en }}</span></dd></div>
+    </dl>
+  </div>
+</section>
+<script src="{{ "js/ppi.js" | relURL }}" defer></script>
+{{ end }}

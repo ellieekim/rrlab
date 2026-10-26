@@ -1,0 +1,25 @@
+# 연구 분야 (Research 페이지에 순서대로 표시)
+# - key: publications.yml 의 tags 와 연결됩니다.
+# - image: static/images/research/ 에 그림을 넣고 경로를 적으세요. 없으면 자리표시 그림이 나옵니다.
+# - summary: 설명문은 초안입니다. 내용을 확인하고 다듬어 주세요.
+
+- key: drone
+  title: "Drone Classification"
+  title_ko: "드론 탐지·식별"
+  summary: "레이다로 소형 드론을 탐지·추적하고, 신호처리와 AI를 이용해 드론과 다른 표적을 구분하는 식별 기법을 연구합니다."
+  image: "images/research/drone-classification.png"
+- key: mimo
+  title: "MIMO Radar"
+  title_ko: "MIMO 레이다"
+  summary: "다중 송수신 배열 설계와 직교 파형·위상 코드 설계로 각도 분해능과 추적 성능을 높이는 MIMO 레이다 신호처리를 연구합니다. 차량용 FMCW 레이다와 초수평선(HFSWR) 레이다에 적용하고 있습니다."
+  image: "images/research/mimo-radar.png"
+- key: noise
+  title: "Wideband Noise Radar"
+  title_ko: "광대역 잡음 레이다"
+  summary: "실시간 지연(True Time Delay) 위상배열을 적용한 광대역 잡음 레이다 시스템과 상관처리 기술을 연구합니다."
+  image: "images/research/wideband-noise-radar.png"
+- key: ssa
+  title: "Space Situation Awareness"
+  title_ko: "우주 상황 인식"
+  summary: "저궤도(LEO) 우주파편을 감시하는 지상기반 감시레이다의 체계 설계, 성능 분석 시뮬레이터, 우주물체 추적과 궤도 추정을 연구합니다."
+  image: "images/research/space-situation-awareness.png"

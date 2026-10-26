@@ -1,0 +1,70 @@
+{{ define "main" }}
+{{ $pubs := site.Data.publications }}
+{{ $kinds := slice
+  (dict "key" "journal_intl" "label" "국제저널" "rank" 4)
+  (dict "key" "journal_domestic" "label" "국내저널" "rank" 3)
+  (dict "key" "conference" "label" "학술대회" "rank" 2)
+  (dict "key" "patent" "label" "특허" "rank" 1) }}
+{{ $all := slice }}
+{{ range $kinds }}
+  {{ $k := . }}
+  {{ range index $pubs .key }}
+    {{ $sk := add (mul .year 1000) (add (mul $k.rank 100) (.month | default 0)) }}
+    {{ $all = $all | append (merge . (dict "kind" $k.key "label" $k.label "sortkey" $sk)) }}
+  {{ end }}
+{{ end }}
+
+<header class="page-head">
+  <div class="wrap">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.intro }}<p class="intro">{{ . }}</p>{{ end }}
+  </div>
+</header>
+
+<section class="wrap pubs">
+  <div class="pub-tools" role="group" aria-label="목록 필터">
+    <div class="chips">
+      <button type="button" class="chip-btn" data-kind="all" aria-pressed="true">전체 <span>{{ len $all }}</span></button>
+      {{ range $kinds }}
+      <button type="button" class="chip-btn" data-kind="{{ .key }}" aria-pressed="false">{{ .label }} <span>{{ len (index $pubs .key) }}</span></button>
+      {{ end }}
+    </div>
+    <label class="search" for="pub-q">
+      <span class="visually-hidden">제목·학술지 검색</span>
+      <input id="pub-q" type="search" placeholder="제목이나 학술지로 검색" autocomplete="off">
+    </label>
+  </div>
+  <p class="pub-status" id="pub-status" aria-live="polite"></p>
+
+  {{ $year := 0 }}
+  <div class="pub-years">
+  {{ range $i, $p := sort $all "sortkey" "desc" }}
+    {{ if ne $p.year $year }}
+      {{ if ne $year 0 }}</ul></div>{{ end }}
+      {{ $year = $p.year }}
+      <div class="pub-year" data-year="{{ $year }}">
+        <h2 class="year">{{ $year }}</h2>
+        <ul class="pub-list">
+    {{ end }}
+          <li class="pub" data-kind="{{ $p.kind }}">
+            <span class="kind kind-{{ $p.kind }}">{{ $p.label }}</span>
+            <span class="pub-body">
+              <span class="pub-title">{{ with $p.link }}<a href="{{ . }}">{{ $p.title }}</a>{{ else }}{{ $p.title }}{{ end }}</span>
+              <span class="meta">
+                {{- if eq $p.kind "patent" -}}
+                  {{ $p.status }}, {{ $p.year }}.{{ printf "%02d" (int $p.month) }}
+                {{- else if eq $p.kind "conference" -}}
+                  {{ $p.venue }}, {{ $p.year }}.{{ printf "%02d" (int $p.month) }}
+                {{- else -}}
+                  {{ $p.venue }}{{ with $p.volume }}, vol. {{ . }}{{ end }}, {{ $p.year }}
+                {{- end -}}
+              </span>
+            </span>
+          </li>
+  {{ end }}
+  {{ if ne $year 0 }}</ul></div>{{ end }}
+  </div>
+  <p class="pub-empty" id="pub-empty" hidden>검색 결과가 없습니다. 다른 단어로 검색하거나 필터를 ‘전체’로 바꿔 보세요.</p>
+</section>
+<script src="{{ "js/pubs.js" | relURL }}" defer></script>
+{{ end }}
