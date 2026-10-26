@@ -10,6 +10,7 @@
   </header>
   <div class="wrap prose">
     {{ .Content }}
+    {{ partial "posters.html" (dict "page" . "class" "posters") }}
   </div>
 </article>
 {{ end }}

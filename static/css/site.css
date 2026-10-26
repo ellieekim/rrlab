@@ -285,6 +285,13 @@ h2 { font-family: var(--f-display); font-weight: 720; font-stretch: 108%; font-s
 .alumni dt { font-weight: 600; }
 .alumni dd { color: var(--muted); }
 
+/* posters (news) */
+.posters { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px; margin-top: 12px; }
+.posters a { display: block; }
+.posters img { width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--rule); background: var(--surface); }
+.posters a:hover img { border-color: var(--scope); }
+.home-posters { max-width: 560px; }
+
 /* post */
 .crumb { margin-bottom: 14px; font-size: 0.92rem; }
 .post-title { font-size: clamp(1.9rem, 4vw, 2.8rem) !important; }

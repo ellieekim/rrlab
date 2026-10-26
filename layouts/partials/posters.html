@@ -1,0 +1,10 @@
+{{/* 포스터 이미지 목록. ctx: dict "page" . "class" "posters" — static/ 에 있는 파일만 표시합니다. */}}
+{{ $imgs := slice }}
+{{ range .page.Params.posters }}{{ if fileExists (printf "static/%s" .) }}{{ $imgs = $imgs | append . }}{{ end }}{{ end }}
+{{ with $imgs }}
+<div class="{{ $.class }}">
+  {{ range $i, $src := . }}
+  <a href="{{ $src | relURL }}" target="_blank" rel="noopener"><img src="{{ $src | relURL }}" alt="{{ $.page.Title }} 포스터 {{ add $i 1 }}" loading="lazy"></a>
+  {{ end }}
+</div>
+{{ end }}

@@ -46,6 +46,7 @@
         <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
         <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
         {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+        {{ if .Params.featured }}{{ partial "posters.html" (dict "page" . "class" "posters home-posters") }}{{ end }}
       </article>
       {{ end }}
     </div>
