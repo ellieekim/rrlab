@@ -25,7 +25,8 @@
   var el = document.getElementById("visits");
   if (!el || !window.fetch) return;
   var offset = {{ site.Params.visits_offset | default 0 }};
-  fetch("https://{{ . }}.goatcounter.com/counter/TOTAL.json")
+  // GoatCounter returns 0 for TOTAL unless a start date is given, so always pass one.
+  fetch("https://{{ . }}.goatcounter.com/counter/TOTAL.json?start={{ site.Params.visits_start | default "2026-10-01" }}")
     .then(function (r) { if (!r.ok) throw r.status; return r.json(); })
     .then(function (d) {
       var n = parseInt(String(d.count).replace(/[^0-9]/g, ""), 10) + offset;
