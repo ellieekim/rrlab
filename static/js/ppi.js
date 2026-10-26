@@ -121,12 +121,13 @@
     draw(sweep);
     if (!document.hidden) requestAnimationFrame(frame); else last = null;
   }
-  if (reduce) {
-    draw(80);
-  } else {
+  if (reduce) sweep = 80;
+  draw(sweep); // paint a first frame right away, even if animation frames are paused
+  if (!reduce) {
     requestAnimationFrame(frame);
     document.addEventListener("visibilitychange", function () { if (!document.hidden) { last = null; requestAnimationFrame(frame); } });
   }
-  if (window.ResizeObserver) new ResizeObserver(function () { resize(); if (reduce) draw(80); }).observe(c);
-  if (window.matchMedia) matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () { readColors(); if (reduce) draw(80); });
+  // resizing clears the canvas, so always redraw the current frame
+  if (window.ResizeObserver) new ResizeObserver(function () { resize(); draw(sweep); }).observe(c);
+  if (window.matchMedia) matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () { readColors(); draw(sweep); });
 })();
