@@ -1,0 +1,82 @@
+# 구성원
+# - photo: static/images/members/ 에 사진을 넣고 파일명을 적으세요. 없으면 이니셜이 표시됩니다.
+# - 학생이 졸업하면 students 에서 지우고 alumni 에 한 줄 추가하세요.
+
+professor:
+  name: "김은희"
+  name_en: "Eunhee Kim"
+  title: "교수 Professor"
+  email: "eunheekim@sejong.ac.kr"
+  photo: "images/members/eunhee-kim.jpg"
+  education:
+    - ko: "한국과학기술원(KAIST) 기계공학과 공학박사"
+      en: "Ph.D. in Mechanical Engineering, KAIST"
+    - ko: "한국과학기술원(KAIST) 기계공학과 공학석사"
+      en: "M.S. in Mechanical Engineering, KAIST"
+    - ko: "한국과학기술원(KAIST) 정밀공학과 공학사"
+      en: "B.S. in Precision Engineering, KAIST"
+  experience:
+    - ko: "LIG넥스원 ISR연구센터 수석연구원"
+      en: "Principal Research Engineer, ISR Research Center, LIG Nex1"
+      period: "2007–2013"
+    - ko: "Magnum Semiconductor Korea, Senior Staff Engineer"
+      en: ""
+      period: "2006–2007"
+    - ko: "LG전자 Digital Media 연구소 선임연구원"
+      en: "Senior Researcher, Digital Media Lab., LG Electronics"
+      period: "2002–2005"
+  activities:
+    - text: "한국전자파학회 이사, 레이다 연구회 회원"
+      period: "2013–현재"
+    - text: "한국군사과학기술학회 센서 및 신호처리 부문 위원"
+      period: "2018–현재"
+    - text: "방위산업기술보호 실무위원회 위원"
+      period: "2016–2022"
+    - text: "해군발전 자문위원회 위원"
+      period: "2016–2019"
+    - text: "육군 첨단센서 과학기술그룹 자문위원"
+      period: "2019"
+    - text: "방위사업청 통합재정사업 자체평가위원"
+      period: "2017"
+    - text: "국방기술품질원 국방 과학기술 조사서 및 기술수준조사 전문위원"
+      period: "2009"
+
+students:
+  - name: "박우영"
+    name_en: "Wooyoung Park"
+    degree: "석사과정"
+    since: 2025
+    background: "세종대학교 국방시스템공학과 졸업 (2018.02)"
+    email: "wooyoung.park.rokn@sju.ac.kr"
+    interests: ["Radar Systems", "Signal Processing", "Target Classification"]
+    photo: "images/members/wooyoung-park.jpg"
+  - name: "박융"
+    name_en: ""
+    degree: "석사과정"
+    since: 2026
+    background: "명지대학교 수학과 졸업(2026.08)"
+    email: ""
+    interests: ["Signal Processing", "Drone Tracking"]
+    photo: "images/members/YoongPark.jpeg"
+  - name: "구윤성"
+    name_en: ""
+    degree: "석사과정"
+    since: 2026
+    background: "세종대학교 소프트웨어학과 졸업 (2026.02)"
+    email: ""
+    interests: ["Signal Processing", "Drone Tracking"]
+    photo:"images/members/YounSeong.png"
+
+alumni:
+  - name: "조근"
+    affiliation: "한화에어로스페이스 요소기술센터"
+  - name: "신동윤"
+    affiliation: "오토엘(AutoL)"
+  - name: "이영재"
+    affiliation: "한국항공우주산업(KAI)"
+  - name: "김승련"
+    affiliation: "LIG넥스원"
+  - name: "윤덕근"
+    affiliation: "LIG넥스원"
+  - name: "조우형"
+    affiliation: "LIG넥스원"
